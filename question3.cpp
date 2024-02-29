@@ -1,7 +1,8 @@
 class question3{
-    public:
+    private:
         stack<int>s;
         stack<int>mn;
+    public:
         void push(int x){
             if(s.empty()){
                 s.push(x);
@@ -9,7 +10,7 @@ class question3{
             }
             else if(x > mn.top()){
                 s.push(x);
-                mn.push(s.top());
+                mn.push(mn.top());
                 
             }
             else{
@@ -22,10 +23,10 @@ class question3{
             s.pop();
             return temp;
         }
-        int top(int x){
+        int top(){
             return s.top();
         }
         int getMin(){
             return mn.top();
         }
-}
+};
